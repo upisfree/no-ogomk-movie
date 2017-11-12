@@ -1,0 +1,144 @@
+<html prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8">
+    
+    <meta name="title" content="UP TV">
+    <meta name="description" content="UP TV">
+    <meta name="author" content="upisfree">
+    <meta name="copyright" content="upisfree">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="UP TV">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="UP TV">
+    <meta property="og:image" content="assets/logo.jpg">
+    <meta property="og:image:width" content="1758">
+    <meta property="og:image:height" content="1758">
+    <meta property="og:url" content="//upisfr.ee/no-ogomk-movie">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@upisfree">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <title>UP TV</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:500,500i,900,900i" rel="stylesheet">
+
+    <style>
+body
+{
+  margin: 0;
+  background: #000;
+
+  position: relative;
+  /*transform: rotate(90deg);*/
+
+  overflow: hidden; /* disable pull-down-to-refresh on chrome for android  */
+  
+  color: #fff;
+  font-family: sans-serif;
+  /*font-style: italic;*/
+  font-size: 18pt;
+  font-weight: 900;
+
+  /* YEAH */
+  /* filter: blur(100px); */
+}
+
+#content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+
+h1 {
+  margin: 0;
+}
+
+@media only screen and (max-device-width: 740px)
+{
+  #ads
+  {
+    font-size: 16pt;
+  }
+}
+    </style>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter34743330 = new Ya.Metrika({ id:34743330, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/34743330" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+  </head>
+
+  <body>
+    <div id="content">
+      <h1 id="logo">Полнометражки нет уже:</h1>
+      <h1 id="days"></h1>
+      <h1 id="hours"></h1>
+      <h1 id="minutes"></h1>
+      <h1 id="seconds"></h1>      
+    </div>
+
+    <script src="./moment.js"></script>
+
+    <script>
+var chuhDate = '2015-11-13';
+moment.locale('ru');
+
+function getTimeDifference(a) {
+  // let d = Date.now() - new Date(a),
+  //     seconds = moment.duration(Math.floor(-(d / 1000) % 60), 'seconds').humanize(false),
+  //     minutes = moment.duration(Math.floor(-(d / 1000 / 60) % 60), 'minutes').humanize(true),
+  //     hours = moment.duration(Math.floor(-(d / (1000 * 60 * 60)) % 24), 'hours').humanize(true),
+  //     days = moment.duration(Math.floor(-d / (1000 * 60 * 60 * 24)), 'days').humanize(true);
+  
+  let d = Date.now() - new Date(a),
+      seconds = Math.floor((d / 1000) % 60),
+      minutes = Math.floor((d / 1000 / 60) % 60),
+      hours = Math.floor((d / (1000 * 60 * 60)) % 24),
+      days = Math.floor(d / (1000 * 60 * 60 * 24));
+      
+  return {
+    seconds: seconds,
+    minutes: minutes,
+    hours: hours,
+    days: days
+  };
+}
+
+
+function id(a) {
+  return document.getElementById(a);
+}
+
+// 700 дней
+// 701 день
+// 702 дня
+// 703 дня
+// 704 дня
+// 705 дней
+// 706 дней
+// 707 дней
+// 708 дней
+// 709 дней
+// 710 дней
+// 711 дней
+// 712 дней
+// 713 дней
+
+setInterval(function() {
+  let d = getTimeDifference(chuhDate);
+
+  id('days').textContent = d.days + ' дней';
+  id('hours').textContent = d.hours + ' часов';
+  id('minutes').textContent = d.minutes + ' минут';
+  id('seconds').textContent = d.seconds + ' секунд';
+});
+    </script>
+  </body>
+</html>
